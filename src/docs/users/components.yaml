@@ -1,0 +1,71 @@
+components:
+  schemas:
+    Users:
+      type: object
+      properties:
+        _id:
+          type: string
+          description: ID del usuario
+        first_name:
+          type: string
+          description: Nombre del usuario
+        last_name:
+          type: string
+          description: Apellido del usuario
+        email:
+          type: string
+          description: Correo electrónico del usuario
+        password:
+          type: string
+          description: Contraseña del usuario (encriptada)
+        role:
+          type: string
+          description: Rol del usuario, por defecto 'user'
+        pets:
+          type: array
+          items:
+            type: object
+            properties:
+              _id:
+                type: string
+                description: ID de la mascota
+      example:
+        _id: "5f7e9f9b5f7e9f9b5f7e9f9b"
+        first_name: "John"
+        last_name: "Doe"
+        email: "johndoe@example.com"
+        password: "hashedpassword"
+        role: "user"
+        pets:
+          - _id: "5f7e9f9b5f7e9f9b5f7e9f9b"
+
+  requestBody:
+    userBody:
+      description: Datos del usuario
+      required: true
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              first_name:
+                type: string
+                description: Nombre del usuario
+              last_name:
+                type: string
+                description: Apellido del usuario
+              email:
+                type: string
+                description: Correo electrónico del usuario
+              password:
+                type: string
+                description: Contraseña del usuario
+              role:
+                type: string
+                description: Rol del usuario, por defecto 'user'
+            example:
+              first_name: "John"
+              last_name: "Doe"
+              email: "johndoe@example.com"
+              password: "123456"
+              role: "user"

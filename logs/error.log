@@ -1,0 +1,9 @@
+2024-11-06 20:12:22 [[31merror[39m]: undefined Operation `pets.find()` buffering timed out after 10000ms
+2024-11-06 21:02:21 [[31merror[39m]: undefined Nuestro error
+2024-11-07 09:26:54 [[31merror[39m]: undefined Nuestro error
+2024-11-07 09:32:48 [[31merror[39m]: undefined Nuestro error
+2024-11-07 09:49:40 [[31merror[39m]: undefined this.userDao.getBy is not a function
+2024-11-07 09:49:43 [[31merror[39m]: undefined this.userDao.getBy is not a function
+2024-11-07 09:59:09 [[31merror[39m]: undefined this.userDao.getBy is not a function
+2024-11-07 10:02:10 [[31merror[39m]: undefined this.userDao.getBy is not a function
+2024-11-07 10:08:17 [[31merror[39m]: undefined User id 672cb2028ff8010076c64f24 not found
