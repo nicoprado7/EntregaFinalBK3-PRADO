@@ -6,15 +6,11 @@ paths:
       tags:
         - Users
       requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: "#/components/schemas/User"
+        $ref: "#/components/requestBody/userBody"
       responses:
         201:
           description: Usuario creado
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/User"
+                $ref: "#/components/schemas/Users"

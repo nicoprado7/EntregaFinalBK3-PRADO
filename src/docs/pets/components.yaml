@@ -2,9 +2,9 @@ components:
   schemas:
     Pets:
       type: array
-      item:
+      items:
         properties:
-          _id: 
+          _id:
             type: ObjectId
             description: Id de la mascota
           name:

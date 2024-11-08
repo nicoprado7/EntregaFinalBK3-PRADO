@@ -7,3 +7,4 @@
 2024-11-07 09:59:09 [[31merror[39m]: undefined this.userDao.getBy is not a function
 2024-11-07 10:02:10 [[31merror[39m]: undefined this.userDao.getBy is not a function
 2024-11-07 10:08:17 [[31merror[39m]: undefined User id 672cb2028ff8010076c64f24 not found
+2024-11-08 20:23:08 [[31merror[39m]: undefined Unexpected token '"', ""string"" is not valid JSON

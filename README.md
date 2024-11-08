@@ -48,4 +48,4 @@ http://localhost:8080/api-docs
 ## Instalación
 - Clona el repositorio: git clone https://github.com/nicoprado7/EntregaFinalBK3-PRADO
 - Instala las dependencias: npm install
-- Inicia el servidor: npm run start
+- Inicia el servidor: npm run dev
