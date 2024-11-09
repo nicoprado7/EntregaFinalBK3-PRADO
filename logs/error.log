@@ -8,3 +8,72 @@
 2024-11-07 10:02:10 [[31merror[39m]: undefined this.userDao.getBy is not a function
 2024-11-07 10:08:17 [[31merror[39m]: undefined User id 672cb2028ff8010076c64f24 not found
 2024-11-08 20:23:08 [[31merror[39m]: undefined Unexpected token '"', ""string"" is not valid JSON
+2024-11-09 18:06:33 [[31merror[39m]: undefined usersService is not defined
+2024-11-09 18:06:33 [[31merror[39m]: undefined usersService is not defined
+2024-11-09 18:06:33 [[31merror[39m]: undefined Parameter "filter" to findOne() must be an object, got "invalidAdoptionId" (type string)
+2024-11-09 18:06:33 [[31merror[39m]: undefined bcrypt is not defined
+2024-11-09 18:26:46 [[31merror[39m]: undefined E11000 duplicate key error collection: proyectoBackendFinal.users index: email_1 dup key: { email: "testuser@example.com" }
+2024-11-09 18:26:57 [[31merror[39m]: undefined E11000 duplicate key error collection: proyectoBackendFinal.users index: email_1 dup key: { email: "testuser@example.com" }
+2024-11-09 18:26:58 [[31merror[39m]: undefined Parameter "filter" to findOne() must be an object, got "invalidAdoptionId" (type string)
+2024-11-09 18:26:58 [[31merror[39m]: undefined bcrypt is not defined
+2024-11-09 18:28:30 [[31merror[39m]: undefined usersService is not defined
+2024-11-09 18:28:30 [[31merror[39m]: undefined usersService is not defined
+2024-11-09 18:28:30 [[31merror[39m]: undefined Parameter "filter" to findOne() must be an object, got "invalidAdoptionId" (type string)
+2024-11-09 18:28:31 [[31merror[39m]: undefined bcrypt is not defined
+2024-11-09 18:30:28 [[31merror[39m]: undefined usersService is not defined
+2024-11-09 18:30:28 [[31merror[39m]: undefined usersService is not defined
+2024-11-09 18:30:28 [[31merror[39m]: undefined Parameter "filter" to findOne() must be an object, got "invalidAdoptionId" (type string)
+2024-11-09 18:30:28 [[31merror[39m]: undefined bcrypt is not defined
+2024-11-09 18:33:16 [[31merror[39m]: undefined usersService is not defined
+2024-11-09 18:33:16 [[31merror[39m]: undefined usersService is not defined
+2024-11-09 18:33:16 [[31merror[39m]: undefined Parameter "filter" to findOne() must be an object, got "invalidAdoptionId" (type string)
+2024-11-09 18:33:16 [[31merror[39m]: undefined bcrypt is not defined
+2024-11-09 18:34:56 [[31merror[39m]: undefined usersService is not defined
+2024-11-09 18:34:56 [[31merror[39m]: undefined usersService is not defined
+2024-11-09 18:34:56 [[31merror[39m]: undefined Parameter "filter" to findOne() must be an object, got "invalidAdoptionId" (type string)
+2024-11-09 18:39:38 [[31merror[39m]: undefined usersService is not defined
+2024-11-09 18:39:38 [[31merror[39m]: undefined usersService is not defined
+2024-11-09 18:39:38 [[31merror[39m]: undefined Parameter "filter" to findOne() must be an object, got "invalidAdoptionId" (type string)
+2024-11-09 18:42:37 [[31merror[39m]: undefined usersService is not defined
+2024-11-09 18:42:37 [[31merror[39m]: undefined usersService is not defined
+2024-11-09 18:42:37 [[31merror[39m]: undefined Parameter "filter" to findOne() must be an object, got "invalidAdoptionId" (type string)
+2024-11-09 18:49:51 [[31merror[39m]: undefined usersService is not defined
+2024-11-09 18:49:52 [[31merror[39m]: undefined usersService is not defined
+2024-11-09 18:49:52 [[31merror[39m]: undefined Parameter "filter" to findOne() must be an object, got "invalidAdoptionId" (type string)
+2024-11-09 19:06:46 [[31merror[39m]: undefined this.usersService.getUserById is not a function
+2024-11-09 19:06:46 [[31merror[39m]: undefined this.usersService.getUserById is not a function
+2024-11-09 19:06:46 [[31merror[39m]: undefined Parameter "filter" to findOne() must be an object, got "invalidAdoptionId" (type string)
+2024-11-09 19:12:40 [[31merror[39m]: undefined usersService is not defined
+2024-11-09 19:12:40 [[31merror[39m]: undefined usersService is not defined
+2024-11-09 19:12:40 [[31merror[39m]: undefined Parameter "filter" to findOne() must be an object, got "invalidAdoptionId" (type string)
+2024-11-09 19:20:17 [[31merror[39m]: undefined usersService is not defined
+2024-11-09 19:20:17 [[31merror[39m]: undefined usersService is not defined
+2024-11-09 19:20:17 [[31merror[39m]: undefined Parameter "filter" to findOne() must be an object, got "invalidAdoptionId" (type string)
+2024-11-09 19:20:55 [[31merror[39m]: undefined this.usersService.getUserById is not a function
+2024-11-09 19:20:55 [[31merror[39m]: undefined this.usersService.getUserById is not a function
+2024-11-09 19:20:55 [[31merror[39m]: undefined Parameter "filter" to findOne() must be an object, got "invalidAdoptionId" (type string)
+2024-11-09 19:25:13 [[31merror[39m]: undefined petsService is not defined
+2024-11-09 19:25:13 [[31merror[39m]: undefined petsService is not defined
+2024-11-09 19:25:13 [[31merror[39m]: _id Cast to ObjectId failed for value "invalidAdoptionId" (type string) at path "_id" for model "Adoptions"
+2024-11-09 19:31:05 [[31merror[39m]: undefined usersService is not defined
+2024-11-09 19:31:05 [[31merror[39m]: undefined usersService is not defined
+2024-11-09 19:31:05 [[31merror[39m]: undefined Parameter "filter" to findOne() must be an object, got "invalidAdoptionId" (type string)
+2024-11-09 19:34:59 [[31merror[39m]: undefined this.petsService.getBy is not a function
+2024-11-09 19:34:59 [[31merror[39m]: undefined this.petsService.getBy is not a function
+2024-11-09 19:34:59 [[31merror[39m]: _id Cast to ObjectId failed for value "invalidAdoptionId" (type string) at path "_id" for model "Adoptions"
+2024-11-09 19:38:38 [[31merror[39m]: _id Cast to ObjectId failed for value "invalidAdoptionId" (type string) at path "_id" for model "Adoptions"
+2024-11-09 19:38:54 [[31merror[39m]: _id Cast to ObjectId failed for value "invalidAdoptionId" (type string) at path "_id" for model "Adoptions"
+2024-11-09 19:51:59 [[31merror[39m]: _id Cast to ObjectId failed for value "invalidAdoptionId" (type string) at path "_id" for model "Adoptions"
+2024-11-09 19:56:46 [[31merror[39m]: _id Cast to ObjectId failed for value "invalidAdoptionId" (type string) at path "_id" for model "Adoptions"
+2024-11-09 20:14:20 [[31merror[39m]: undefined Adoption id 672fecccba7f101c837bf93c not found
+2024-11-09 20:16:40 [[31merror[39m]: undefined Adoption id 672fed583bdd3a3b31a9fc93 not found
+2024-11-09 20:16:40 [[31merror[39m]: undefined Adoption id 672fed583bdd3a3b31a9fc94 not found
+2024-11-09 20:16:53 [[31merror[39m]: undefined Adoption id 672fed6590bc28f88ce40e6f not found
+2024-11-09 20:19:50 [[31merror[39m]: undefined Adoption id 672fee16e2f751a7f6bb390a not found
+2024-11-09 20:23:35 [[31merror[39m]: undefined Adoption id 672feef72d0689e66e0a639b not found
+2024-11-09 20:24:43 [[31merror[39m]: Error: Adoption id 672fef3bb6ec08362fc82032 not found - Path: /api/adoptions/672fef3bb6ec08362fc82032
+2024-11-09 20:30:49 [[31merror[39m]: undefined Error al obtener las adopciones
+2024-11-09 20:31:01 [[31merror[39m]: undefined Adoption id 672ff0b540f6e4a7ba2324a1 not found
+2024-11-09 20:45:07 [[31merror[39m]: undefined E11000 duplicate key error collection: proyectoBackendFinal.users index: email_1 dup key: { email: "johndoe@example.com" }
+2024-11-09 20:45:25 [[31merror[39m]: undefined E11000 duplicate key error collection: proyectoBackendFinal.users index: email_1 dup key: { email: "johndoe@example.com" }
+2024-11-09 20:45:49 [[31merror[39m]: undefined E11000 duplicate key error collection: proyectoBackendFinal.users index: email_1 dup key: { email: "johndoe@example.com" }

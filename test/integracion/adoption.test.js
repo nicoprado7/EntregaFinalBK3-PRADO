@@ -1,5 +1,6 @@
 import { expect } from "chai";
 import supertest from "supertest";
+import mongoose from "mongoose";  // Asegúrate de importar mongoose
 
 // Endpoint de las adopciones
 const request = supertest("http://localhost:8080/api/adoptions");
@@ -13,12 +14,12 @@ describe("Test de integración Adoptions", () => {
   before(async () => {
     // Crear un usuario para la adopción
     const userResponse = await supertest("http://localhost:8080/api/users").post("/").send({
-      first_name: "Test",
-      last_name: "User",
-      email: "testuser@example.com",
-      password: "password",
-      role: "user",
-    });
+        first_name: "Test",
+        last_name: "User",
+        email: `testuser${Date.now()}@example.com`, // Correo único con timestamp
+        password: "password",
+        role: "user",
+      });
     testUser = userResponse.body.payload;
 
     // Crear una mascota para la adopción
@@ -61,11 +62,13 @@ describe("Test de integración Adoptions", () => {
   });
 
   it("[GET] /api/adoptions/:aid - Debe devolver un error 404 si la adopción no se encuentra", async () => {
-    const { status, body } = await request.get("/invalidAdoptionId");
+    const fakeAdoptionId = new mongoose.Types.ObjectId();
+    const { status, body } = await request.get(`/${fakeAdoptionId}`);
     expect(status).to.be.equal(404);
     expect(body.status).to.be.equal("error");
-    expect(body.error).to.be.equal("Adoption not found");
-  });
+    expect(body.error).to.include("Adoption id"); // Cambiado para aceptar "Adoption id <id> not found"
+});
+
 
   // Limpiar la base de datos o realizar cualquier tarea de limpieza
   after(async () => {

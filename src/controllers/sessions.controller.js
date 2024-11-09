@@ -15,11 +15,13 @@ export class SessionsController {
         return res
           .status(400)
           .send({ status: "error", error: "Incomplete values" });
+
       const exists = await this.userServices.getByEmail(email);
       if (exists)
         return res
           .status(400)
           .send({ status: "error", error: "User already exists" });
+
       const hashedPassword = await createHash(password);
       const user = {
         first_name,
@@ -27,10 +29,16 @@ export class SessionsController {
         email,
         password: hashedPassword,
       };
+
       let result = await this.userServices.create(user);
       res.status(201).json({ status: "success", payload: result });
     } catch (error) {
-      next(error);
+      console.error("Error en el registro:", error); // Mejor manejo de errores
+      if (error.code === 11000) {
+        return res.status(400).send({ status: "error", error: "Email already in use" });
+      }
+      // Enviar el error original para poder diagnosticarlo más fácilmente
+      res.status(500).send({ status: "error", error: "Internal server error", details: error.message });
     }
   };
 
@@ -41,26 +49,32 @@ export class SessionsController {
         return res
           .status(400)
           .send({ status: "error", error: "Incomplete values" });
+  
       const user = await this.userServices.getByEmail(email);
       if (!user)
         return res
           .status(404)
           .send({ status: "error", error: "User doesn't exist" });
+  
       const isValidPassword = await passwordValidation(user, password);
       if (!isValidPassword)
         return res
           .status(400)
           .send({ status: "error", error: "Incorrect password" });
+  
       const userDto = UserDTO.getUserTokenFrom(user);
       const token = jwt.sign(userDto, "tokenSecretJWT", { expiresIn: "1h" });
-      res
+  
+      // Verifica que estás enviando correctamente el token
+      return res
+        .status(200)
         .cookie("coderCookie", token, { maxAge: 3600000 })
-        .send({ status: "success", message: "Logged in" });
+        .send({ status: "success", message: "Logged in", payload: { token } });
     } catch (error) {
       next(error);
     }
   };
-
+  
   current = async (req, res, next) => {
     try {
       const cookie = req.cookies["coderCookie"];
@@ -78,16 +92,19 @@ export class SessionsController {
         return res
           .status(400)
           .send({ status: "error", error: "Incomplete values" });
+
       const user = await this.userServices.getUserByEmail(email);
       if (!user)
         return res
           .status(404)
           .send({ status: "error", error: "User doesn't exist" });
+
       const isValidPassword = await passwordValidation(user, password);
       if (!isValidPassword)
         return res
           .status(400)
           .send({ status: "error", error: "Incorrect password" });
+
       const token = jwt.sign(user, "tokenSecretJWT", { expiresIn: "1h" });
       res
         .cookie("unprotectedCookie", token, { maxAge: 3600000 })

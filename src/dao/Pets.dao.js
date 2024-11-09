@@ -1,27 +1,33 @@
-import petModel from "./models/Pet.js";
+import petModel from "./models/Pet.js"; // Importamos el modelo de Pet
 
 export default class Pet {
-  get = (params) => {
-    return petModel.find(params);
-  };
+  // Obtener mascotas por parámetros
+  get(params) {
+    return petModel.find(params); // Devuelve todas las mascotas que coincidan con los parámetros
+  }
 
-  getBy = (params) => {
-    return petModel.findOne(params);
-  };
+  // Obtener una mascota por parámetros (único)
+  getBy(params) {
+    return petModel.findOne(params); // Devuelve una sola mascota que coincida
+  }
 
-  save = (doc) => {
-    return petModel.create(doc);
-  };
+  // Guardar una mascota nueva
+  save(doc) {
+    return petModel.create(doc); // Crea una nueva mascota
+  }
 
-  saveMany = (docs) => {
-    return petModel.insertMany(docs);
-  };
+  // Guardar varias mascotas
+  saveMany(docs) {
+    return petModel.insertMany(docs); // Inserta muchas mascotas
+  }
 
-  update = (id, doc) => {
-    return petModel.findByIdAndUpdate(id, { $set: doc }, { new: true });
-  };
+  // Actualizar una mascota por ID
+  update(id, doc) {
+    return petModel.findByIdAndUpdate(id, { $set: doc }, { new: true }); // Actualiza y devuelve la mascota actualizada
+  }
 
-  delete = (id) => {
-    return petModel.findByIdAndDelete(id);
-  };
+  // Eliminar una mascota por ID
+  delete(id) {
+    return petModel.findByIdAndDelete(id); // Elimina la mascota
+  }
 }

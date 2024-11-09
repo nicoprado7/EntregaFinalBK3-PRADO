@@ -2,7 +2,7 @@ import Users from "../../src/dao/Users.dao.js";
 import mongoose from "mongoose";
 import { expect } from "chai";
 
-mongoose.connect("mongodb://localhost:27017/clase-9");
+mongoose.connect(`mongodb+srv://nicoprado7:vqZRIUO8QORZOGlI@cluster0.lqucksl.mongodb.net/proyectoBackendFinal?retryWrites=true&w=majority&appName=Cluster0`);
 
 // Describir nuestro test
 describe("Test UserDao", () => {

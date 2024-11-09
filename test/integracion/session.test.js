@@ -6,6 +6,7 @@ const userRequest = supertest("http://localhost:8080/api/users");
 
 describe("Test Integrales de Sessions", () => {
   let userTest;
+
   it("[POST] /api/sessions/register - Debe registrar un usuario", async () => {
     const newUser = {
       first_name: "User",
@@ -15,8 +16,13 @@ describe("Test Integrales de Sessions", () => {
     };
 
     const { status, body } = await request.post("/register").send(newUser);
-    userTest = body.payload;
+    console.log("Respuesta del registro:", body); // Agregar más información en consola para depuración
 
+    if (status === 201) {
+      userTest = body.payload;
+      console.log("Usuario registrado:", userTest);
+    }
+    
     expect(status).to.be.equal(201);
     expect(body.status).to.be.equal("success");
     expect(body.payload).to.be.an("object");
@@ -26,22 +32,25 @@ describe("Test Integrales de Sessions", () => {
     expect(body.payload.password).to.not.be.equal(newUser.password);
   });
 
-  it("[POST] /api/sessions/login - Debe loguear un usuario", async () => {
-    const data = {
-      email: "usertest1@gmail.com",
+  it("[POST] /api/sessions/login - Debe iniciar sesión con credenciales válidas", async () => {
+    const loginData = {
+      email: userTest.email,
       password: "123",
     };
-
-    const { status, body } = await request.post("/login").send(data);
+  
+    const { status, body } = await request.post("/login").send(loginData);
+    
+    console.log(body);  // Verifica qué contiene el cuerpo de la respuesta
     
     expect(status).to.be.equal(200);
     expect(body.status).to.be.equal("success");
-    expect(body.message).to.be.an("string");
+    expect(body.payload).to.have.property("token");  // Aquí es donde esperamos que haya un "token"
   });
-
-
+  
 
   after(async () => {
-    await userRequest.delete(`/${userTest._id}`)
+    if (userTest && userTest._id) {
+      await userRequest.delete(`/${userTest._id}`);
+    }
   });
 });
