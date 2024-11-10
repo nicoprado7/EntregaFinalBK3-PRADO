@@ -42,7 +42,7 @@ http://localhost:8080/api-docs
 ## Docker
 - Esta es la imagen de Docker para el proyecto Adoption. Puedes descargarla con el siguiente comando:
 
-    docker pull nicoprado7/adoption:1.0.0
+    docker pull nicoprado7/adoption1:1.0.0
 
 
 ## Instalación
