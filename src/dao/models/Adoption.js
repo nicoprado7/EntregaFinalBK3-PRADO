@@ -5,16 +5,16 @@ const collection = "Adoptions";
 const schema = new mongoose.Schema({
   owner: {
     type: mongoose.SchemaTypes.ObjectId,
-    ref: 'Users', // Asegúrate de que 'Users' esté bien definido en tu modelo de Usuario
-    required: true // Se puede agregar 'required' si siempre debe haber un dueño
+    ref: 'Users',
+    required: true
   },
   pet: {
     type: mongoose.SchemaTypes.ObjectId,
-    ref: 'Pets', // Asegúrate de que 'Pets' esté bien definido en tu modelo de Mascota
-    required: true // Se puede agregar 'required' si siempre debe haber una mascota
+    ref: 'Pets',
+    required: true
   }
 }, {
-  timestamps: true // Puedes agregar timestamps si deseas almacenar las fechas de creación y modificación
+  timestamps: true
 });
 
 const adoptionModel = mongoose.model(collection, schema);

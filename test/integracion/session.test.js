@@ -16,13 +16,13 @@ describe("Test Integrales de Sessions", () => {
     };
 
     const { status, body } = await request.post("/register").send(newUser);
-    console.log("Respuesta del registro:", body); // Agregar más información en consola para depuración
+    console.log("Respuesta del registro:", body);
 
     if (status === 201) {
       userTest = body.payload;
       console.log("Usuario registrado:", userTest);
     }
-    
+
     expect(status).to.be.equal(201);
     expect(body.status).to.be.equal("success");
     expect(body.payload).to.be.an("object");
@@ -37,16 +37,16 @@ describe("Test Integrales de Sessions", () => {
       email: userTest.email,
       password: "123",
     };
-  
+
     const { status, body } = await request.post("/login").send(loginData);
-    
-    console.log(body);  // Verifica qué contiene el cuerpo de la respuesta
-    
+
+    console.log(body);
+
     expect(status).to.be.equal(200);
     expect(body.status).to.be.equal("success");
-    expect(body.payload).to.have.property("token");  // Aquí es donde esperamos que haya un "token"
+    expect(body.payload).to.have.property("token");
   });
-  
+
 
   after(async () => {
     if (userTest && userTest._id) {

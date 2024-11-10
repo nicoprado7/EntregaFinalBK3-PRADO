@@ -13,24 +13,24 @@ export class UserControllers {
     res.status(201).json({ status: "ok", users });
   };
 
-  // Dentro de la clase UserControllers
+
 createUser = async (req, res, next) => {
     try {
-      const userData = req.body; // Los datos del usuario vienen en el cuerpo de la solicitud
-      const newUser = await this.userServices.create(userData); // Usamos el servicio para crear el usuario
+      const userData = req.body;
+      const newUser = await this.userServices.create(userData);
       res.status(201).json({ status: "success", payload: newUser });
     } catch (error) {
-      next(error); // Manejo de errores
+      next(error);
     }
   };
 
 
   getAllUsers = async (req, res, next) => {
     try {
-      const users = await this.userServices.getAll(); // Llama al servicio para obtener los usuarios
+      const users = await this.userServices.getAll();
       res.send({ status: "success", payload: users });
     } catch (error) {
-      next(error); // Si hay un error, se envía al manejador de errores
+      next(error);
     }
   };
 

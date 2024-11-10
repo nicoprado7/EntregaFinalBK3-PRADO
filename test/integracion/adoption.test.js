@@ -1,8 +1,7 @@
 import { expect } from "chai";
 import supertest from "supertest";
-import mongoose from "mongoose";  // Asegúrate de importar mongoose
+import mongoose from "mongoose";
 
-// Endpoint de las adopciones
 const request = supertest("http://localhost:8080/api/adoptions");
 
 describe("Test de integración Adoptions", () => {
@@ -10,19 +9,17 @@ describe("Test de integración Adoptions", () => {
   let testUser;
   let testPet;
 
-  // Crear un usuario y una mascota antes de las pruebas
+
   before(async () => {
-    // Crear un usuario para la adopción
     const userResponse = await supertest("http://localhost:8080/api/users").post("/").send({
         first_name: "Test",
         last_name: "User",
-        email: `testuser${Date.now()}@example.com`, // Correo único con timestamp
+        email: `testuser${Date.now()}@example.com`,
         password: "password",
         role: "user",
       });
     testUser = userResponse.body.payload;
 
-    // Crear una mascota para la adopción
     const petResponse = await supertest("http://localhost:8080/api/pets").post("/").send({
       name: "Pet Test",
       specie: "Gato",
@@ -54,7 +51,6 @@ describe("Test de integración Adoptions", () => {
   });
 
   it("[POST] /api/adoptions/:uid/:pid - No debe permitir adoptar una mascota que ya está adoptada", async () => {
-    // Intentar adoptar la misma mascota de nuevo
     const { status, body } = await request.post(`/${testUser._id}/${testPet._id}`);
     expect(status).to.be.equal(400);
     expect(body.status).to.be.equal("error");
@@ -66,13 +62,10 @@ describe("Test de integración Adoptions", () => {
     const { status, body } = await request.get(`/${fakeAdoptionId}`);
     expect(status).to.be.equal(404);
     expect(body.status).to.be.equal("error");
-    expect(body.error).to.include("Adoption id"); // Cambiado para aceptar "Adoption id <id> not found"
+    expect(body.error).to.include("Adoption id");
 });
 
-
-  // Limpiar la base de datos o realizar cualquier tarea de limpieza
   after(async () => {
-    // Aquí deberías eliminar el usuario, mascota y adopción para que la base de datos quede limpia
     await supertest("http://localhost:8080/api/adoptions").delete(`/${testAdoption._id}`);
     await supertest("http://localhost:8080/api/pets").delete(`/${testPet._id}`);
     await supertest("http://localhost:8080/api/users").delete(`/${testUser._id}`);

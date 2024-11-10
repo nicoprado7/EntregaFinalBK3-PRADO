@@ -1,8 +1,7 @@
-// adoption.controller.js
 import { UserServices } from "../services/user.services.js";
 import { PetServices } from "../services/pet.services.js";
 import { AdoptionServices } from "../services/adoption.services.js";
-import { NotFoundError } from "../utils/customErrors.js"; // Importamos la excepción personalizada
+import { NotFoundError } from "../utils/customErrors.js";
 
 export class AdoptionsController {
   constructor() {
@@ -71,7 +70,7 @@ export class AdoptionsController {
 
       res.status(200).send({ status: "success", message: "Pet adopted", payload: adoption });
     } catch (error) {
-      next(error); // Pasa el error al middleware de manejo de errores
+      next(error);
     }
   };
 }

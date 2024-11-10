@@ -4,7 +4,7 @@ import { generateUsersMock } from "../mocks/user.mock.js";
 
 export class UserServices {
   constructor() {
-    // this.userRepository = new UserRepository(new Users());
+
     this.userDao = new Users();
   }
   async getAll() {

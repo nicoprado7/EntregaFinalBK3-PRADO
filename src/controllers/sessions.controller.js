@@ -33,11 +33,11 @@ export class SessionsController {
       let result = await this.userServices.create(user);
       res.status(201).json({ status: "success", payload: result });
     } catch (error) {
-      console.error("Error en el registro:", error); // Mejor manejo de errores
+      console.error("Error en el registro:", error);
       if (error.code === 11000) {
         return res.status(400).send({ status: "error", error: "Email already in use" });
       }
-      // Enviar el error original para poder diagnosticarlo más fácilmente
+
       res.status(500).send({ status: "error", error: "Internal server error", details: error.message });
     }
   };
@@ -49,22 +49,22 @@ export class SessionsController {
         return res
           .status(400)
           .send({ status: "error", error: "Incomplete values" });
-  
+
       const user = await this.userServices.getByEmail(email);
       if (!user)
         return res
           .status(404)
           .send({ status: "error", error: "User doesn't exist" });
-  
+
       const isValidPassword = await passwordValidation(user, password);
       if (!isValidPassword)
         return res
           .status(400)
           .send({ status: "error", error: "Incorrect password" });
-  
+
       const userDto = UserDTO.getUserTokenFrom(user);
       const token = jwt.sign(userDto, "tokenSecretJWT", { expiresIn: "1h" });
-  
+
       // Verifica que estás enviando correctamente el token
       return res
         .status(200)
@@ -74,7 +74,7 @@ export class SessionsController {
       next(error);
     }
   };
-  
+
   current = async (req, res, next) => {
     try {
       const cookie = req.cookies["coderCookie"];

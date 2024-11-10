@@ -1,6 +1,5 @@
-// adoption.services.js
 import Adoption from "../dao/Adoption.js";
-import { NotFoundError } from "../utils/customErrors.js"; // Importamos la excepción personalizada
+import { NotFoundError } from "../utils/customErrors.js";
 
 export class AdoptionServices {
   constructor() {
@@ -13,7 +12,7 @@ export class AdoptionServices {
 
   async getById(id) {
     const adoption = await this.adoptionDao.getBy({ _id: id });
-    if (!adoption) throw new NotFoundError(`Adoption id ${id} not found`); // Lanzamos la excepción personalizada
+    if (!adoption) throw new NotFoundError(`Adoption id ${id} not found`);
     return adoption;
   }
 
