@@ -6,15 +6,16 @@ import { errorHandle } from "./errors/errHandle.js";
 import { logger } from "./utils/logger.js";
 import swaggerUiExpress from "swagger-ui-express";
 import { specs } from "./config/swagger.config.js";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 8080;
 
 const connectDB = async () => {
   try {
-    await mongoose.connect(
-      `mongodb+srv://nicoprado7:vqZRIUO8QORZOGlI@cluster0.lqucksl.mongodb.net/proyectoBackendFinal?retryWrites=true&w=majority&appName=Cluster0`
-    );
+    await mongoose.connect(process.env.MONGODB_URI);
     logger.info("Base de datos conectada correctamente");
   } catch (error) {
     logger.error("Error al conectar con la base de datos:", error);

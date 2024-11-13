@@ -1,8 +1,11 @@
 import Users from "../../src/dao/Users.dao.js";
 import mongoose from "mongoose";
 import { expect } from "chai";
+import dotenv from "dotenv";
 
-mongoose.connect(`mongodb+srv://nicoprado7:vqZRIUO8QORZOGlI@cluster0.lqucksl.mongodb.net/proyectoBackendFinal?retryWrites=true&w=majority&appName=Cluster0`);
+dotenv.config();
+
+mongoose.connect(process.env.MONGODB_URI);
 
 describe("Test UserDao", () => {
   const userDao = new Users();

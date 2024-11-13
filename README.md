@@ -49,3 +49,10 @@ http://localhost:8080/api-docs
 - Clona el repositorio: git clone https://github.com/nicoprado7/EntregaFinalBK3-PRADO
 - Instala las dependencias: npm install
 - Inicia el servidor: npm run dev
+
+## Configuración de Variables de Entorno
+
+Para ejecutar el proyecto correctamente, asegúrese de crear un archivo `.env` en la raíz del proyecto con el siguiente contenido:
+
+MONGODB_URI=mongodb+srv://tuUsuario:tuPassword@cluster0.lqucksl.mongodb.net/proyectoBackendFinal?retryWrites=true&w=majority&appName=Cluster0
+PORT=8080
